@@ -6,12 +6,43 @@
 }
 
 body{
+    background-color: #efedd6;
      font-family: 'Roboto', 'sans-serif';
      margin: 0;
      display:flex; /* makes items horizontal  */ 
      flex-direction: column; /* moves box to be like a column, vertically */
      align-items: center; /* if flex-direction is in column, will align horizontally, if row it will align vertically */
      justify-content: center; /* does not move to center of page without height */
-     height: 100vh; /* viewport height, take up entire height of page */ 
-     overflow: hidden; /* hidden to not show scroll bars by default */
+}
+
+h1{
+    margin: 10px;
+}
+
+.box{
+    background-color: steelblue;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    height: 200px;
+    margin: 10px;
+    border-radius: 10px; 
+    box-shadow: 2px 4px 5px rgba(0,0,0,0.3);
+    transform: translateX(200%);
+    transition: transform 0.4s ease;
+}
+
+/* pseudo selector to select only the even numbered boxes*/
+.box:nth-of-type(even){
+ transform: translateX(-200%);
+}
+
+.box.show{
+    transform: translateX(0);
+}
+
+.box h2{
+    font-size: 45px;
 }
