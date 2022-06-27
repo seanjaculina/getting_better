@@ -13,6 +13,7 @@ body{
      flex-direction: column; /* moves box to be like a column, vertically */
      align-items: center; /* if flex-direction is in column, will align horizontally, if row it will align vertically */
      justify-content: center; /* does not move to center of page without height */
+     overflow-x: hidden;
 }
 
 h1{
