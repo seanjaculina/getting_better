@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 
+:root{
+    --left-bg-color: rgba(87, 84, 236, 0.7);
+    --right-bg-color: rgba(43, 43, 43, 0.8);
+    --left-btn-hover-color: rgba(87, 84, 236, 1);
+    --right-btn-hover-color: rgba(28, 122, 28, 1);
+    --hover-width: 75%;
+    --other-width: 25%;
+    --speed: 1000ms;
+}
 *{
     box-sizing: border-box;
    
@@ -8,10 +17,119 @@
 body{
      font-family: 'Roboto', 'sans-serif';
      margin: 0;
-     display:flex; /* makes items horizontal  */ 
-     flex-direction: column; /* moves box to be like a column, vertically */
-     align-items: center; /* if flex-direction is in column, will align horizontally, if row it will align vertically */
-     justify-content: center; /* does not move to center of page without height */
      height: 100vh; /* viewport height, take up entire height of page */ 
      overflow: hidden; /* hidden to not show scroll bars by default */
+}
+
+h1{
+    font-size: 4rem;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+    white-space: nowrap; /* removes the wrapping during responsiveness */
+}
+
+.btn{
+    position: absolute;
+    display: flex; 
+    align-items: center;
+    justify-content: center;  
+    left: 50%;
+    top: 40%;
+    transform: translateX(-50%); /*moving the button so that the middle of the text is in the middle of the screen instead of the beginning of the text */
+    color: #fff;
+    border: #fff solid 0.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 15rem;
+    padding: 1.5rem;
+}
+
+.split.left .btn:hover{
+    background-color: var(--left-btn-hover-color);
+    border-color: var(--left-btn-hover-color);
+}
+
+.split.right .btn:hover{
+    background-color: var(--right-btn-hover-color);
+    border-color: var(--right-btn-hover-color);
+}
+
+.hover-left .left{
+    width: var(--hover-width);
+}
+
+.hover-left .right{
+    width: var(--other-width);
+}
+
+.hover-right .right{
+    width: var(--hover-width);
+}
+
+.hover-right .left{
+    width: var(--other-width);
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+}
+
+.split{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.split.left{
+    left: 0;
+    background: url('./ps.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* when using before pseudo selector must use a content property*/
+.split.left::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--left-bg-color);
+}
+
+.split.right{
+    right: 0;
+    background: url('./xbox.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.split.right::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--right-bg-color);
+}
+
+.split.right, .split.left, .split.right::before, .split.left::before{
+    transition: all var(--speed) ease-in-out;
+}
+
+@media (max-width: 800px){
+    .h1{
+        font-size: 2rem;
+        top: 30%;
+    }
+    .btn{
+        padding: 1.2rem;
+        width: 12rem;
+    }
 }
