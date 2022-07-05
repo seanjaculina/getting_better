@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
 *{
     box-sizing: border-box;
@@ -6,12 +6,34 @@
 }
 
 body{
-     font-family: 'Roboto', 'sans-serif';
+    background-color: rgb(161, 100, 223);
+     font-family: 'Poppins', 'sans-serif';
      margin: 0;
      display:flex; /* makes items horizontal  */ 
-     flex-direction: column; /* moves box to be like a column, vertically */
+     flex-wrap: wrap;
+     text-align: center;
      align-items: center; /* if flex-direction is in column, will align horizontally, if row it will align vertically */
      justify-content: center; /* does not move to center of page without height */
      height: 100vh; /* viewport height, take up entire height of page */ 
      overflow: hidden; /* hidden to not show scroll bars by default */
+}
+
+.btn{
+    background-color: rebeccapurple;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    margin: 1rem;
+    padding: 1.5rem 3rem;
+    font-size: 1.2rem;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.btn:hover{
+    opacity: 0.9;
+}
+.btn:focus{
+    outline: none;
+
 }
