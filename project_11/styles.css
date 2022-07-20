@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+*{
+    box-sizing: border-box;
+   
+}
+
+body{
+     background-color: #e1e1e1;
+     font-family: 'Muli', 'sans-serif';
+     margin: 0;
+     display:flex; /* makes items horizontal  */ 
+     text-align: center;
+     align-items: center; /* if flex-direction is in column, will align horizontally, if row it will align vertically */
+     justify-content: center; /* does not move to center of page without height */
+     height: 100vh; /* viewport height, take up entire height of page */ 
+     overflow: hidden; /* hidden to not show scroll bars by default */
+}
+
+.key{
+    border: 1px solid #999;
+    background-color: #eee;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    display: inline-flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px;
+    flex-direction: column;
+    margin: 10px;
+    min-width: 150px;
+    position: relative; /* small tags positioned in the key class are absolute; when something in absolute but you want to position something inside the container it will be position relative*/
+
+
+}
+
+.key small{
+    position: absolute;
+    top: -24px;
+    left: 0;
+    text-align: center;
+    width: 100%;
+    color: #555;
+    font-size: 14px;
+}
