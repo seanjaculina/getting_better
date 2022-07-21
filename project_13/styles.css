@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
 
 *{
     box-sizing: border-box;
@@ -6,7 +6,8 @@
 }
 
 body{
-     font-family: 'Roboto', 'sans-serif';
+    background-color: #2b88f0;
+     font-family: 'Muli', 'sans-serif';
      margin: 0;
      display:flex; /* makes items horizontal  */ 
      flex-direction: column; /* moves box to be like a column, vertically */
@@ -14,4 +15,40 @@ body{
      justify-content: center; /* does not move to center of page without height */
      height: 100vh; /* viewport height, take up entire height of page */ 
      overflow: hidden; /* hidden to not show scroll bars by default */
+}
+
+h3{
+    color: #fff;
+    margin: 10px 0 20px;
+    text-align: center;
+}
+
+.container{
+    width: 500px;
+}
+
+textarea{
+    border: none;
+    display: block;
+    width: 100%; /* 100% of the container*/
+    height: 100px;
+    font-family: inherit;
+    padding: 10px;
+    margin: 0 0 20px;
+    font-size: 16px;
+}
+
+.tag{
+    background-color: #f0932b;
+    color: #fff;
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin: 0 5px 10px 0;
+    font-size: 14px;
+    display: inline-block;
+}
+
+
+.tag.highlight{
+    background-color: #273c75;
 }
